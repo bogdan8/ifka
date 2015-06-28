@@ -25,7 +25,7 @@
 																								<span class="icon-bar"></span>
 																								<span class="icon-bar"></span>
 																				</button>
-																					<a class="navbar-brand" href="index.php"> ifka </a>
+																				<a class="navbar-brand" href="index.php"> ifka </a>
 																</div>
 																<div class="collapse navbar-collapse" id="responsive-menu">
 																				<ul class="nav navbar-nav">  
@@ -49,6 +49,7 @@
 												</div>
 								</div>
 								<?php
+
 								require_once("config.php");
 								if	(!preg_match("|^[\d]*$|",	$_GET['page']))
 												puterror("Помилка при підключені до блоку новин");
@@ -56,12 +57,12 @@
 								if	(empty($page))
 												$page	=	1;
 								$begin	=	($page	-	1)	*	$all_number_news;
-								if	(!preg_match("|^[\d]*$|",	$_GET['id_news']))
+								if	(!preg_match("|^[\d]*$|",	$_GET['id']))
 												puterror("Помилка при підключені до блоку новин");
-								if	(isset($_GET['id_news']))	{
-												$query	=	"SELECT * FROM `news` WHERE id_news="	.	$_GET['id_news'];
+								if	(isset($_GET['id']))	{
+												$query	=	"SELECT * FROM `news` WHERE id="	.	$_GET['id'];
 								}	else	{
-												$query	=	"SELECT id_news,
+												$query	=	"SELECT id,
                    name,
                    body,
                    DATE_FORMAT(putdate,'%d.%m.%Y') as putdate_format,
@@ -72,7 +73,6 @@
 																			url_pict_4,
               FROM `news`
               WHERE putdate <= NOW()
-
               LIMIT $begin, $all_number_news";
 								}
 								$new	=	mysql_query($query);
@@ -231,28 +231,28 @@
 																								<?php
 
 																								echo	"<p class='namenews' >"	.	$news['name']	.	"</p>";
-																								echo "<p style='text-align: center;'>" . ($news['putdate'])	.	"</p>";
+																								echo	"<p style='text-align: center;'>"	.	($news['putdate'])	.	"</p>";
 																								echo	"<p class='textnews'>";
 																								echo	nl2br($news['body'])	.	"</p>";
 																								echo	"<div class='container'>";
 																								echo	"<div class='row'>";
 																								echo	"<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>";
-																								if	(trim($news['url_pict'])	!=	""	&&	trim($news['url_pict'])	!=	"-"){
-																												echo	"<a class='imgnews' href=".$news['url_pict'].">";
+																								if	(trim($news['url_pict'])	!=	""	&&	trim($news['url_pict'])	!=	"-")	{
+																												echo	"<a class='imgnews' href="	.	$news['url_pict']	.	">";
 																												echo	"<img  class='imgnews' src="	.	$news['url_pict']	.	">";
 																												echo	"</a>";
 																								}
 																								echo	"</div>";
 																								echo	"<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>";
-																								if	(trim($news['url_pict_1'])	!=	""	&&	trim($news['url_pict_1'])	!=	"-"){
-																												echo	"<a class='imgnews' href=".$news['url_pict_1'].">";
+																								if	(trim($news['url_pict_1'])	!=	""	&&	trim($news['url_pict_1'])	!=	"-")	{
+																												echo	"<a class='imgnews' href="	.	$news['url_pict_1']	.	">";
 																												echo	"<img  class='imgnews' src="	.	$news['url_pict_1']	.	">";
 																												echo	"</a>";
 																								}
 																								echo	"</div>";
 																								echo	"<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>";
-																								if	(trim($news['url_pict_2'])	!=	""	&&	trim($news['url_pict_2'])	!=	"-"){
-																												echo	"<a class='imgnews' href=".$news['url_pict_2'].">";
+																								if	(trim($news['url_pict_2'])	!=	""	&&	trim($news['url_pict_2'])	!=	"-")	{
+																												echo	"<a class='imgnews' href="	.	$news['url_pict_2']	.	">";
 																												echo	"<img  class='imgnews' src="	.	$news['url_pict_2']	.	">";
 																												echo	"</a>";
 																								}
@@ -262,15 +262,15 @@
 																								echo	"<div class='container'>";
 																								echo	"<div class='row'>";
 																								echo	"<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>";
-																								if	(trim($news['url_pict_3'])	!=	""	&&	trim($news['url_pict_3'])	!=	"-"){
-																												echo	"<a class='imgnews' href=".$news['url_pict_3'].">";
+																								if	(trim($news['url_pict_3'])	!=	""	&&	trim($news['url_pict_3'])	!=	"-")	{
+																												echo	"<a class='imgnews' href="	.	$news['url_pict_3']	.	">";
 																												echo	"<img  class='imgnews' src="	.	$news['url_pict_3']	.	">";
 																												echo	"</a>";
 																								}
 																								echo	"</div>";
 																								echo	"<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>";
-																								if	(trim($news['url_pict_4'])	!=	""	&&	trim($news['url_pict_4'])	!=	"-"){
-																												echo	"<a class='imgnews' href=".$news['url_pict_4'].">";
+																								if	(trim($news['url_pict_4'])	!=	""	&&	trim($news['url_pict_4'])	!=	"-")	{
+																												echo	"<a class='imgnews' href="	.	$news['url_pict_4']	.	">";
 																												echo	"<img  class='imgnews' src="	.	$news['url_pict_4']	.	">";
 																												echo	"</a>";
 																								}
@@ -280,7 +280,7 @@
 																								echo	"<div class='container'>";
 																								echo	"<div class='row'>";
 																								echo	"<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>";
-																								echo "<p style='text-align: center;'>" . ($news['putdate'])	.	"</p>";
+																								echo	"<p style='text-align: center;'>"	.	($news['putdate'])	.	"</p>";
 																								echo	"<p class='namenews' >"	.	$news['name']	.	"</p>";
 																								echo	"</div>";
 																								echo	"</div>";
