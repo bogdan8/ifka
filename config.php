@@ -15,8 +15,9 @@ Error_Reporting(E_ALL & ~E_NOTICE);
   $numchar = 400;
   // Кількість новин, виводим їх на сторінку
   // Всі новини
+  $number_photo	=	4;
   $all_number_news = 10;
-		$all_number_photo = 50;
+	$all_number_photo = 50;
   // Версія Web-додатку
   $version = "2.0.3";
   

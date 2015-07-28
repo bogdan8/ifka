@@ -1,23 +1,27 @@
 <?php
-    include 'util/header.php';
+include 'config.php';
+include 'util/header.php';
+include 'util/sliders.php';
 ?>
-<?php
-    include 'util/sliders.php';
-?>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="height: 250px; margin-bottom: 50px;">
-                <iframe src="//vk.com/video_ext.php?oid=174064143&id=169889366&hash=0253684ad65161e3&hd=2" width="100%" height="100%"  frameborder="0"></iframe>
-            </div>
-												<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="height: 250px; margin-bottom: 50px;">
-                <iframe src="//vk.com/video_ext.php?oid=174064143&id=169889366&hash=0253684ad65161e3&hd=2" width="100%" height="100%"  frameborder="0"></iframe>
-            </div>
-												<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="height: 250px; margin-bottom: 50px;">
-                <iframe src="//vk.com/video_ext.php?oid=174064143&id=169889366&hash=0253684ad65161e3&hd=2" width="100%" height="100%"  frameborder="0"></iframe>
-            </div>
-        </div>
+<div class="container">
+ <div class="row">
+  <?php
+  $res=mysql_query('SELECT `name_video`, `link_video` FROM `video`');
+  while($row=mysql_fetch_assoc($res)){
+    ?>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="margin-top: 50px;">
+     <div class="video">
+      <p class="namevideo"><?=$row['name_video']?></p>
+      <div class="link_video"><?=$row['link_video']?></div>
+     </div>
     </div>
+    <?php
+  }
+  ?>
+ </div>
+</div>
+
 <?php
-    include 'util/footer.php';
+include 'util/footer.php';
 ?>
 		
