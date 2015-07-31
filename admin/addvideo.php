@@ -44,7 +44,7 @@ include '../config.php';
    </div>
   </div>
  </div>
- <div class="container" style="margin-top: 50px;">
+ <div class="container" style="margin-top: 50px; text-align: center;">
   <div class="row">
    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <p class="nameform">Додати відео:	 </p>
@@ -53,7 +53,7 @@ include '../config.php';
       $name=$_POST['name'];
       $linkvideo=$_POST['linkvideo'];
       $hsl=mysql_query(
-          "INSERT into `news`.`video` VALUES ('', '$name', '$linkvideo')");
+          "INSERT into `video` VALUES ('', '$name', '$linkvideo')");
       if($hsl){
         echo "<script>alert('Додано')</script>";
       }else{

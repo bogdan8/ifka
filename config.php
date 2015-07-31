@@ -1,5 +1,5 @@
 <?php
-Error_Reporting(E_ALL & ~E_NOTICE); 
+Error_Reporting(E_ALL); 
 
   // Імя сервера бази данних
   $dblocation = "localhost";
