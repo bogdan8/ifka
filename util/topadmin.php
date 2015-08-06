@@ -28,6 +28,6 @@
 												<p class="admin_name1"><a href="../index.php">Вернутись на сайт</a></p>
 								</div>
 								<div class="admin_1">	
-												<img height="100%" width="100%" src="../img/admin/1.jpeg"></a>
+												<img height="100%" width="100%" src="../img/admin/1.jpeg">
 								</div>
 				</div>

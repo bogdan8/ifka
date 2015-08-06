@@ -228,30 +228,36 @@
 				</div>
 				<div class="container">
 					<div class="row">
-						<p class='namenews' ><?=$news['name']?></p>
-						<p style='text-align: center;'><?=($news['putdate'])?></p>
-						<p class='textnews'><?=nl2br($news['body'])?></p>
+						<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+							<p class='namenews' ><?=$news['name']?></p>
+							<p style='text-align: center;'><?=($news['putdate'])?></p>
+							<p class='textnews'><?=nl2br($news['body'])?></p>
+						</div>
 						<div class='container'>
 							<div class='row'>
 								<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
 									<?php
 									if(trim($news['url_pict'])!=""&&trim($news['url_pict'])!="-"){
-										echo	"<a class='imgnews' href=".$news['url_pict'].">";
-										echo	"<img  class='imgnews' src=".$news['url_pict'].">";
+										echo	"<a class='imgnews'	 href=".$news['url_pict'].">";
+										echo	"<img class='imgnews' src=".$news['url_pict'].">";
 										echo	"</a>";
 									}
-									echo	"</div>";
-									echo	"<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>";
+									?>
+								</div>
+								<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+									<?php
 									if(trim($news['url_pict_1'])!=""&&trim($news['url_pict_1'])!="-"){
 										echo	"<a class='imgnews' href=".$news['url_pict_1'].">";
-										echo	"<img  class='imgnews' src=".$news['url_pict_1'].">";
+										echo	"<img class='imgnews' src=".$news['url_pict_1'].">";
 										echo	"</a>";
 									}
-									echo	"</div>";
-									echo	"<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>";
+									?>
+								</div>
+								<div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+									<?php
 									if(trim($news['url_pict_2'])!=""&&trim($news['url_pict_2'])!="-"){
 										echo	"<a class='imgnews' href=".$news['url_pict_2'].">";
-										echo	"<img  class='imgnews' src=".$news['url_pict_2'].">";
+										echo	"<img class='imgnews' src=".$news['url_pict_2'].">";
 										echo	"</a>";
 									}
 									?>
@@ -264,14 +270,16 @@
 									<?php
 									if(trim($news['url_pict_3'])!=""&&trim($news['url_pict_3'])!="-"){
 										echo	"<a class='imgnews' href=".$news['url_pict_3'].">";
-										echo	"<img  class='imgnews' src=".$news['url_pict_3'].">";
+										echo	"<img class='imgnews' src=".$news['url_pict_3'].">";
 										echo	"</a>";
 									}
-									echo	"</div>";
-									echo	"<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>";
+									?>
+								</div>
+								<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>
+									<?php
 									if(trim($news['url_pict_4'])!=""&&trim($news['url_pict_4'])!="-"){
 										echo	"<a class='imgnews' href=".$news['url_pict_4'].">";
-										echo	"<img  class='imgnews' src=".$news['url_pict_4'].">";
+										echo	"<img class='imgnews' src=".$news['url_pict_4'].">";
 										echo	"</a>";
 									}
 									?>
@@ -292,7 +300,8 @@
 
 				</div>
 			</div>
-			<?php
-			include	'util/footer.php';
-			?>
+		</div>
+		<?php
+		include	'util/footer.php';
+		?>
 		

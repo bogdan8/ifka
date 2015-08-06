@@ -41,7 +41,7 @@ include	'util/sliders.php';
 													while($modalphotoall=mysql_fetch_array($allphoto)){
 														?>
 														<a class="fancyimage" href="/photo/<?php	echo	$modalphotoall['file']?>" >
-															<img  class="modalphoto" src="/photo/<?php	echo	$modalphotoall['file']?>" />
+															<img  class="modalphoto" src="/photo/thumb/<?php	echo	$modalphotoall['file']?>" />
 														</a>
 														<?php
 													}
@@ -52,7 +52,7 @@ include	'util/sliders.php';
 									</div>
 								</div>
 								<a class="fancyimage" href="/photo/<?=$showphoto['file']?>" >
-									<img  class="photo" src="/photo/<?=$showphoto['file']?>" />
+									<img  class="photo" src="/photo/thumb/<?=$showphoto['file']?>" />
 								</a>
 								<?php
 							}
