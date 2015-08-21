@@ -77,24 +77,6 @@
 					}
 				}
 			}
-			/* if(empty($_POST['linksphoto'])){	
-				 }else{
-				 $nm=$_POST['nm'];
-				 $ds=$_POST['dl'];
-				 $idcat=$_POST['cat'];
-				 $name=$_POST['linksphoto'];
-				 if($idcat>0){
-				 $hsl=mysql_query(
-				 "INSERT into `photo` VALUES ('', '$nm', '$ds', '$name', '$type', '$size','$idcat')");
-				 if($hsl){
-				 echo	"<script>alert('Добавлено')</script>";
-				 }else{
-				 echo	"<script>alert('Помилка бази данних')</script>";
-				 }
-				 }else{
-				 echo	"<script>alert('Невибрана категорія')</script>";
-				 }
-				 } */
 			?>
 			<form action="" method="POST" enctype="multipart/form-data">
 				<table>
@@ -112,15 +94,6 @@
 						</td>
 						<td></td>
 					</tr>
-					<!--	
-					<tr>
-							<td style="margin-left: 50px;"><br>
-								<label class="nameform"> Силка на фото: </label><br>
-								<input type="text" name="linksphoto" />
-							</td>
-							<td></td>
-						</tr>
-					-->
 					<tr>
 						<td style="margin-left: 50px;"><br>
 							<label class="nameform"> Опис: </label><br>
